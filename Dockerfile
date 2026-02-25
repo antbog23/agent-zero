@@ -25,6 +25,9 @@ RUN echo "cache buster $CACHE_DATE" && bash /ins/install_A02.sh $BRANCH
 # post installation steps
 RUN bash /ins/post_install.sh $BRANCH
 
+# Fix scipy/numpy ufunc compatibility issue
+RUN . /opt/venv-a0/bin/activate && pip install --force-reinstall scipy==1.13.1
+
 # Port 80 (AgentZero default)
 ENV PORT=80
 ENV WEB_UI_PORT=80
