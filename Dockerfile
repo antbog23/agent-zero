@@ -26,8 +26,9 @@ RUN echo "cache buster $CACHE_DATE" && bash /ins/install_A02.sh $BRANCH
 RUN bash /ins/post_install.sh $BRANCH
 
 # Railway uses PORT env var
-ENV PORT=80
-EXPOSE 80
+ENV PORT=8080
+ENV WEB_UI_PORT=8080
+EXPOSE 8080
 
 RUN chmod +x /exe/initialize.sh /exe/run_A0.sh /exe/run_searxng.sh /exe/run_tunnel_api.sh
 
