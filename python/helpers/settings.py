@@ -559,7 +559,7 @@ def get_default_settings() -> Settings:
         memory_recall_query_prep=get_default_value("memory_recall_query_prep", False),
         memory_recall_post_filter=get_default_value("memory_recall_post_filter", False),
         memory_memorize_enabled=get_default_value("memory_memorize_enabled", True),
-        memory_memorize_consolidation=get_default_value("memory_memorize_consolidation", True),
+        memory_memorize_consolidation=get_default_value("memory_memorize_consolidation", False),  # disabled: prevents background util_model (OpenRouter) calls after conversations
         memory_memorize_replace_threshold=get_default_value("memory_memorize_replace_threshold", 0.9),
         api_keys={},
         auth_login="",
